@@ -1,0 +1,202 @@
+<html>
+
+<head>
+  <title>Products</title>
+  <link rel="icon" href="logo2.png" type="image/icon type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Secular+One&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="twoo">
+  <nav class="navbar-inverse two" style="position:sticky;top:0;z-index:99999">
+
+    <div class="navbar-header two">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar2">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+       
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar2">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html" class="buy2">Home</a></li>
+            <li><a href="index.html"class="au2">About Us</a></li>
+            <li><a href="index.html"class="con2">Contact</a></li>
+        
+        </ul>
+    </div>
+    </nav>
+
+
+<h1>Here are our products...</h1>
+
+
+
+<div  data-toggle="modal" data-target="#fcart"> <button class="glyphicon glyphicon-shopping-cart cart" onclick="cart_click()"><br> Cart <span id="cart_items"class="badge"></span></button> </div>
+<br>
+<div class="modal fade" id="fcart">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Cart</h4><button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="p_modal" id="output"></p>
+                
+                <button class="btn btn-danger"onclick="clearcart()" id="clear">Clear</button> 
+                <button class="btn btn-success"onclick="savecart()" id="save">Save</button> 
+                <br><br>
+                <form>
+                    <input placeholder="Enter your Name"><br>
+                    <input placeholder="Enter your Mobile No."><br>
+                    <input placeholder="Enter your Address">
+                </form>
+            </div>
+        </div>
+    </div>
+  </div><br>
+
+
+
+<div class=" list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro1">
+<img class="img-responsive" id="im1" src="https://lh3.googleusercontent.com/-bh7sp6nbqOY/YNxs5_ryfWI/AAAAAAAADX0/d1IOcoftbX02QqdJ4qfui-nPECDl92rmQCJEEGAsYHg/s0/2021-06-30.jpg">
+<h4>Jackfruit</h4>
+<select id="jackfruit" name="qty1">
+<option value="1kg">1kg - Rs.250</option>
+<option value="500g">500g - Rs.125</option>
+
+
+</select><br><br>
+<button class=" b1" onclick="add1()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro2">
+
+<img class="img-responsive"id="im2" src="https://lh3.googleusercontent.com/-Fl-vovwGaoE/YHhEWd20u5I/AAAAAAAAC_o/f7QSkxQxNtMV1xPhmxEOFopAScswHt5QACK8BGAsYHg/s0/Chakka%2Bvaratti%2Bsample%2Bpic.png?authuser=0">
+<h4>Jackfruit Sweet/Varatti</h4>
+<select id="mithai" name="qty2">
+<option value="500g">500g - Rs.400</option>
+<option value="250g">250g - Rs.225</option>
+</select><br><br>
+<button class=" b2" onclick="add2()">Add</button></div>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro3">
+<img class="img-responsive" id="im3" src="https://lh3.googleusercontent.com/-SGvD_vqkxTo/YL2sCV_b7DI/AAAAAAAADP8/2mK8ADZFv6o5aNyxd0RU3DrYlLWh_E1WwCJEEGAsYHg/s0/2021-06-06.jpg">
+<h4>Coldpressed Coconut Oil</h4> 
+<select id="oil" name="qty3">
+    <option value="2l">2 litre - Rs.790</option>
+<option value="1l">1 litre - Rs.400</option>
+<option value="500ml">500 ml - Rs.210</option>
+
+
+</select><br><br>
+<button class=" b3" onclick="add3()">Add</button>
+</div></div>
+
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro4">
+<img class="img-responsive" id="im4" src="https://lh3.googleusercontent.com/-aFzfkcTE7c4/YNxs0PRXElI/AAAAAAAADXo/XpTxeQlNNSkjyAZ5Dvm44SNbLH4v32QHgCJEEGAsYHg/s0/2021-06-30.jpg">
+<h4>Coconut Barfi</h4>
+<select id="barfi" name="qty">
+<option value="1kg">1kg - Rs.600</option>
+<option value="500g">500g - Rs.300</option>
+
+</select><br><br>
+<button class=" b4" onclick="add4()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro5">
+<img class="img-responsive" id="im5" src="https://lh3.googleusercontent.com/-C5T-EugdyZo/YNxsvGbkA3I/AAAAAAAADXc/r0FMT10e70Q8Ea9gbx_LSWc9V_DAGVIHgCJEEGAsYHg/s0/2021-06-30.jpg">
+<h4>Mango   <select id="mango_t" name="mango">
+
+<option value="Banganpalli">Banganpalli</option>
+<option value="Sindhooram">Sindhooram</option>
+<option value="Kilimooku">Kilimooku</option>
+</select></h4>
+<select id="mango" name="qty">
+<option value="2kg">2kg</option>
+<option value="1kg">1kg</option>
+</select><br><br>
+<button class=" b5" onclick="add5()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro6">
+<img class="img-responsive" id="im6" src="https://lh3.googleusercontent.com/-y5LKvlC-kSk/YNxtTkEbWOI/AAAAAAAADYI/EJK4N6CpBmgqf9QX1lNuWCyEEiCe6eSpwCJEEGAsYHg/s0/2021-06-30.jpg">
+<h4>Coconut</h4>
+<select id="coconut" name="qty">
+<option value="Large">Large - Rs.35</option>
+<option value="Medium">Medium - Rs.30</option>
+<option value="Small">Small - Rs.25</option>
+</select><br><br>
+<button class=" b6" onclick="add6()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro7">
+<img class="img-responsive" id="im7" src="https://lh3.googleusercontent.com/-M2L8KjyXuag/YJ4dgrIqdnI/AAAAAAAADDk/U3jAaX-8fycOqpIzxtyzzPrtqUbwR0goACK8BGAsYHg/s0/2021-05-13.png?authuser=0">
+<h4>Mango Varatti/Jam/Sweet</h4>
+<select id="varatti" name="qty">
+<option value="1kg">1kg</option>
+<option value="500g">500g</option>
+</select><br><br>
+<button class=" b7" onclick="add7()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro8">
+<img class="img-responsive" id="im8" src="https://img1.exportersindia.com/product_images/bc-full/2021/1/4012300/jackfruit-powder-1611813313-5703946.jpg">
+<h4>Jackfruit Powder</h4>
+<select id="jackfruit_powder" name="qty">
+
+<option value="250g">250g</option>
+<option value="100g">100g</option>
+</select><br><br>
+<button class=" b8" onclick="add8()">Add</button>
+</div>
+
+<div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro9">
+<img class="img-responsive" id="im9" src="https://lh3.googleusercontent.com/-AVuTMRo4xJ4/YNxtgPotK7I/AAAAAAAADYQ/wvPfLqewmw8IOi9zjOpMrMqy_kOS06M3ACJEEGAsYHg/s0/2021-06-30.jpg">
+<h4>Herbal Coconut Hair Oil</h4>
+<select id="Hair oil" name="qty">
+<option value="2l">2l</option>
+<option value="1l">1l</option>
+</select><br><br>
+<button class=" b9" onclick="add9()">Add</button>
+</div>
+
+
+
+    <div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro10">
+        <img class="img-responsive" id="im10" src="https://img1.exportersindia.com/product_images/bc-full/dir_109/3247382/jack-fruit-seed-flour-1803725.jpg">
+        <h4>Jackfruit Seed Powder</h4>
+        <select id="jackfruit_seed_powder" name="qty">
+        <option value="500g">500g</option>
+        <option value="250g">250g</option>
+        <option value="100g">100g</option>
+        </select><br><br>
+        <button class=" b10" onclick="add10()">Add</button>
+        </div>
+
+        <div class="list-group-item list-group-item-warning col-lg-4 col-md-4 col-sm-6 col-xs-12  pro11">
+            <img class="img-responsive" id="im11" src="https://lh3.googleusercontent.com/-Cb5nKsSTTIE/YNxr76utweI/AAAAAAAADXI/EoLUOngMqWw0AbH3uQwfZu66qz0j4hm3QCJEEGAsYHg/s0/2021-06-30.jpg">
+            <h4>Mango Pickle</h4>
+            <select id="mango_pickle" name="qty">
+            <option value="250g">250g</option>
+            <option value="100g">100g</option>
+            </select><br><br>
+            <button class=" b11" onclick="add11()">Add</button>
+            </div>
+
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
